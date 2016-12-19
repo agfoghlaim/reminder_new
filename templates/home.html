@@ -1,0 +1,54 @@
+
+<ion-view>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">{{reminder.title}}
+        </h1>
+          
+    </ion-header-bar>
+    <ion-content>
+    
+     <ul class="list">
+    <li>
+      Title
+    </li>
+    <li class="item">
+      <input type="text" name="name" ng-model="reminder.title" placeholder="enter reminder"/>
+    </li>
+    <li>Description {{theTitle}}</li>
+    <li>
+       <textarea placeholder="description" ng-model="reminder.description"></textarea>
+    </li>
+
+    <li>Priority{{reminder.priority}}</li>
+   
+    <li >
+       <ion-radio ng-model="reminder.priority" value="low" ng-change="getPriority(reminder.priority)">Low<br></ion-radio>
+       <ion-radio ng-model="reminder.priority" value="medium" ng-change="getPriority(reminder.priority)">Medium<br></ion-radio>
+       <ion-radio ng-model="reminder.priority" value="high" ng-change="getPriority(reminder.priority)">High<br></ion-radio>
+    </li>
+
+
+    <li>Complete {{reminder.complete}}</li>
+    <li>
+         <label class="toggle toggle-assertive">
+       <input ng-model="reminder.complete" type="checkbox" ng-toggle="{{!reminder.complete}}">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+    </li>
+</ul>
+
+<button class="button button-positive" ng-show="!exists"ng-click="makeReminder()">Save</button>
+<button class="button button-positive" ng-show="exists" ng-click ="updateReminder()">Update</button>
+<button class="button button-positive" ng-show="exists" ng-click ="deleteReminder()">Delete</button>
+     
+    
+    </ion-content>
+</ion-view>
+
+
+
+
+
+

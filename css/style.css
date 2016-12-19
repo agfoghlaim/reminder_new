@@ -1,0 +1,6 @@
+li:nth-child(odd) {
+    background-color: lightblue;
+    padding: 10px;
+    …
+}
+
